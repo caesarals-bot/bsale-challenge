@@ -22,8 +22,6 @@ class Server {
         } catch (error) {
             throw new Error(error)
         }
-            
-  
     }
 
     middlewares(){

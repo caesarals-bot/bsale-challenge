@@ -13,6 +13,4 @@ pool.getConnection(function(err){
         console.log('Database connect')
     }
     })
-    
-
 module.exports = pool
