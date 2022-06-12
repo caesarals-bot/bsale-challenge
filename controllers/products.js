@@ -2,6 +2,7 @@ const {Request, Response} = require("express")
 const pool = require("../db/config")
 
 
+
 const productsGet = async (req = Request , res = Response ) => {
     const {id} = req.params
     const {category} = req.query
