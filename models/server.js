@@ -1,8 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 
-const {pool} = require('../db/config')
-const db = require('../db/dbConfig')
+const pool = require('../db/config')
 class Server {
       
     constructor(){
@@ -11,7 +10,6 @@ class Server {
         this.productsPath = '/api/products'
         //Conectar a database
         this.conectarDB()
-        // this.conectarDBS()
         //Middleware: añaden otras funcionalidades al web server
         this.middlewares()
         //Rutas
@@ -20,21 +18,12 @@ class Server {
 
     async conectarDB(){
         try {
-            await pool
+            await pool.getConnection
             console.log('DB online')
         } catch (error) {
             console.log(error)
         }         
     }
-    // async conectarDBS(){
-    //     try {
-    //         await db
-    //         console.log('DB connect')
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-               
-    // }
     middlewares(){
         //Cors
         this.app.use( cors())
