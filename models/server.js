@@ -16,12 +16,10 @@ class Server {
         this.routes()
     }
     async conectarDB(){
-        try {
+
             await pool
-            console.log('Database connect')
-        } catch (error) {
-            console.log(error)
-        }
+         
+     
     }
 
     middlewares(){
