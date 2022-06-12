@@ -7,7 +7,7 @@ class Server {
     constructor(){
         this.app = express()
         this.port = process.env.PORT
-        this.productsPath = '/api/products'
+        this.productsPath = process.env.PRODUCTSPATH
         //Conectar a database
         this.conectarDB()
         //Middleware: añaden otras funcionalidades al web server
