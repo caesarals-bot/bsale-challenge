@@ -34,7 +34,7 @@ class Server {
     }
 
     routes(){
-       this.app.use(this.productsPath, require('../routes/product/router'))
+       this.app.use(this.productsPath, require('../routes/product'))
     }
 
     listen(){
