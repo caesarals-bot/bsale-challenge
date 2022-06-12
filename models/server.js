@@ -15,9 +15,15 @@ class Server {
         //Rutas
         this.routes()
     }
-    
+
     async conectarDB(){
-                await pool
+        try {
+            await pool
+            console.log('DB connect')
+        } catch (error) {
+            console.log(error)
+        }
+               
     }
     middlewares(){
         //Cors
