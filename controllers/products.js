@@ -4,20 +4,7 @@ const pool = require("../db/config")
 
 
 const productsGet = async (req = Request , res = Response ) => {
-    const {id} = req.params
     const {category} = req.query
-
-    if(id){
-        await pool.query(
-        'SELECT * FROM product WHERE id=?', 
-        [id], (err, rows, fields) => {
-            if(!err){
-                res.json(rows[0])
-            }else{
-                console.log(err)
-            }
-        })
-    }
     if(category){
         await pool.query(
         'SELECT * FROM product WHERE category=?', 
@@ -29,7 +16,7 @@ const productsGet = async (req = Request , res = Response ) => {
             }
         })
     }
-    if(!id && !category){
+    if(!category){
         await  pool.query('select * from product', function(err, rows){
         if(!err){
             if( rows ) {
@@ -41,6 +28,20 @@ const productsGet = async (req = Request , res = Response ) => {
             }
         }
      })
+    }
+}
+const productGet = async (req = Request , res = Response ) => {
+    const {id} = req.params
+    if(id){
+        await pool.query(
+        'SELECT * FROM product WHERE id=?', 
+        [id], (err, rows, fields) => {
+            if(!err){
+                res.json(rows[0])
+            }else{
+                console.log(err)
+            }
+        })
     }
 }
 const productsPost = (req, res) => {
@@ -70,6 +71,7 @@ const productsDelete = (req, res = response) => {
 
 module.exports = {
     productsGet,
+    productGet,
     productsPost,
     productsPut,
     productsPatch: productsPatch,

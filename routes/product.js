@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const { 
-    productsGet, 
+    productsGet,
+    productGet, 
     productsPut, 
     productsPost, 
     productsPatch,
@@ -11,7 +12,7 @@ const router = Router()
 
 
 router.get('/', productsGet)
-router.get('/:id', productsGet)
+router.get('/:id', productGet)
 router.put('/:id', productsPut)
 router.post('/', productsPost)
 router.patch('/', productsPatch)
