@@ -3,7 +3,8 @@ const pool = require("../db/config")
 
 
 const productsGet = async (req = Request , res = Response ) => {
-    const {id, category} = req.params
+    const {id} = req.params
+    const {category} = req.query
 
     if(id){
         await pool.query(

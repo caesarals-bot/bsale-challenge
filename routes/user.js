@@ -12,7 +12,6 @@ const router = Router()
 
 router.get('/', productsGet)
 router.get('/:id', productsGet)
-router.get('/category/:category', productsGet)
 router.put('/:id', productsPut)
 router.post('/', productsPost)
 router.patch('/', productsPatch)
