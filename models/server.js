@@ -16,10 +16,7 @@ class Server {
         this.routes()
     }
     async conectarDB(){
-
             await pool
-         
-     
     }
 
     middlewares(){
