@@ -20,7 +20,7 @@ class Server {
             await pool
             console.log('Database connect')
         } catch (error) {
-            throw new Error(error)
+            console.log(error)
         }
     }
 
