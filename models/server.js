@@ -15,10 +15,10 @@ class Server {
         //Rutas
         this.routes()
     }
+    
     async conectarDB(){
-            await pool
+                await pool
     }
-
     middlewares(){
         //Cors
         this.app.use( cors())
