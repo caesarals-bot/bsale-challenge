@@ -9,7 +9,7 @@ class Server {
         this.port = process.env.PORT
         this.productsPath = '/api/products'
         //Conectar a database
-        this.conectarDB
+        this.conectarDB()
         //Middleware: añaden otras funcionalidades al web server
         this.middlewares()
         //Rutas
@@ -34,7 +34,7 @@ class Server {
     }
 
     routes(){
-       this.app.use(this.productsPath, require('../routes/user'))
+       this.app.use(this.productsPath, require('../routes/product/router'))
     }
 
     listen(){
